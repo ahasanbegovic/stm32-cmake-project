@@ -1,0 +1,3 @@
+[submodule "bsp/stm32f4-toolchain"]
+	path = bsp/stm32f4-toolchain
+	url = git@github.com:ahasanbegovic/stm32cube-f4-cmake-toolchain.git
