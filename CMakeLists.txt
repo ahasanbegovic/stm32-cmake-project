@@ -25,8 +25,6 @@ set(DEVICE_FAMILY STM32F429xx)
 # Speed of external resonator
 set(HSE_VALUE 8000000)
 
-# Used linker file (just for testing)
-get_filename_component(LINKER_SCRIPT bsp/linker/STM32F429ZITX_FLASH.ld ABSOLUTE)
 
 # GCC optimization level: use -O0 in debug build, otherwise -O2
 if(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -54,9 +52,6 @@ target_link_libraries(${elf_file} PRIVATE ${additional_linker_flags})
 
 # remove unused sections
 target_link_libraries(${elf_file} PUBLIC "-g -Wl,--gc-sections")
-
-# link with linker file
-target_link_libraries(${elf_file} PUBLIC -T${LINKER_SCRIPT})
 
 # show size of resulting firmware image
 add_custom_target(${elf_file}-size DEPENDS ${elf_file} COMMAND ${ARM_SIZE_EXECUTABLE} -B ${elf_file})

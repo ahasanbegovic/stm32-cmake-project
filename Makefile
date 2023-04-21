@@ -10,4 +10,4 @@ clean:
 	rm -r build
 
 load:
-	STM32_Programmer_CLI.exe -c port=SWD freq=4000 -w ./build/app/stm32-cmake-template.elf 0x08000000
+	STM32_Programmer_CLI.exe -c port=SWD freq=4000 -w ./build/stm32-cmake-template.elf 0x08000000
