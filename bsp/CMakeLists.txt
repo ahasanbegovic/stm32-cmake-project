@@ -1,1 +1,2 @@
 add_subdirectory(stm32f4-toolchain)
+add_subdirectory(stm32f429)
